@@ -6,7 +6,7 @@
 ## Lag ny brukter
 Lag ny bruker i terminal = mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 * Når du skriver inn dette i terminalen bytter du ut 'username' med det du vil at brukeren skal hete og 'password' med passordet du vil at denne brukeren skal ha
-* jnfdkn
+* Når du har skrevet dette er du mest sansyneling inni denne nye brukeren nå
 <br>
 
 #### Om du ikke forstår noe eller sitter fast kan du trykke på denne lenken <br>
