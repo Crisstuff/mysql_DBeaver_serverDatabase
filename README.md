@@ -5,7 +5,7 @@
 
 ## 3
 Lag ny bruker i terminal = mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
-* når du skriver inn dette i terminalen bytter du ut (username) med
+* når du skriver inn dette i terminalen bytter du ut (username) med <br>
 les alt her![Les mer](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
 
 ## Naviger mysql terminal
