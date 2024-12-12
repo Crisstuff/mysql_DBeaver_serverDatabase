@@ -4,8 +4,8 @@
 
 
 ## 3
-| lag ny bruker i terminal = CREATE USER username IDENTIFIED BY password IDENTIFIED WITH auth_plugin |
-* når du  
+Lag ny bruker i terminal = mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+* når du skriver inn dette i terminalen bytter du ut (username) med 
 
 
 ## Naviger mysql terminal
