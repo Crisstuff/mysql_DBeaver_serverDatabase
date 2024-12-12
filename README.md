@@ -4,7 +4,7 @@
 
 
 ## 3
-|lag ny bruker i terminal = CREATE USER username IDENTIFIED BY password IDENTIFIED WITH auth_plugin|
+| lag ny bruker i terminal = CREATE USER username IDENTIFIED BY password IDENTIFIED WITH auth_plugin |
 * når du  
 
 
