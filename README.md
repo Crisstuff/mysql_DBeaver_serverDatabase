@@ -28,6 +28,10 @@ Les alt her: https://www.digitalocean.com/community/tutorials/how-to-create-a-ne
 
 # dbeaver
 ### Connect
-* klikk på data på toppen av skjermen
+* Klikk på data på toppen av skjermen<br>
 ![data](https://github.com/user-attachments/assets/11ae0a7d-e13b-46f3-b291-4d7940c6e965)
+* Så klikker du på NEW Database connection
+* Når du har trykket velger du der etter mysql<br>
+  ![Screenshot from 2024-12-13 12-31-59](https://github.com/user-attachments/assets/1f5a5bb3-ae3e-4e04-a07b-12e92bd535df)
+
 
