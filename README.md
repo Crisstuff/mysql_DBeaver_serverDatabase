@@ -34,9 +34,10 @@ Les alt her: https://www.digitalocean.com/community/tutorials/how-to-create-a-ne
 * Når du har trykket velger du der etter mysql<br>
 ![Screenshot from 2024-12-13 12-31-59](https://github.com/user-attachments/assets/1f5a5bb3-ae3e-4e04-a07b-12e92bd535df)<br>
 * Så skriver du inn navnet på databassen du har laget i (Database)
-* og passordet du
-
+* Og passordet du lagde for root brukeren i password
+* Så tykker du Finish<br>
 ![Screenshot from 2024-12-13 12-34-46](https://github.com/user-attachments/assets/d153fac9-4445-422d-a98d-c7a6f39f92f2)
+
 
 
 
