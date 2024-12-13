@@ -35,8 +35,14 @@ Les alt her: https://www.digitalocean.com/community/tutorials/how-to-create-a-ne
 ![Screenshot from 2024-12-13 12-31-59](https://github.com/user-attachments/assets/1f5a5bb3-ae3e-4e04-a07b-12e92bd535df)<br>
 * Så skriver du inn navnet på databassen du har laget i (Database)
 * Og passordet du lagde for root brukeren i password
+* du burde trykke på (Test Connection)
 * Så tykker du Finish<br>
 ![Screenshot from 2024-12-13 12-34-46](https://github.com/user-attachments/assets/d153fac9-4445-422d-a98d-c7a6f39f92f2)
+* Da skal databasen din har kommet opp i side panelet
+### Set up tabels 
+* høyre klikk på (tabels)
+* der ett klikk (create new tabel)<br>
+![Screenshot from 2024-12-13 13-01-51](https://github.com/user-attachments/assets/bc36aed3-8d08-420a-a7d3-f719e26791e7)
 
 
 
