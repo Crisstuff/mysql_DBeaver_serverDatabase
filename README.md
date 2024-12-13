@@ -43,6 +43,10 @@ Les alt her: https://www.digitalocean.com/community/tutorials/how-to-create-a-ne
 * høyre klikk på (tabels)
 * der ett klikk (create new tabel)<br>
 ![Screenshot from 2024-12-13 13-01-51](https://github.com/user-attachments/assets/bc36aed3-8d08-420a-a7d3-f719e26791e7)
+* Klikk på table name og skiv inn hva du vil at tablet ditt vil hete.
+* Høyre klikk på det det tomme omerådet på i bildet og (Create new Column) og navn gi den
+* lage alle column ene du trenger eller vil ha
+* 
 
 
 
