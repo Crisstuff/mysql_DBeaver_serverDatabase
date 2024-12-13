@@ -17,8 +17,17 @@ Lag ny bruker i terminal = mysql> CREATE USER 'username'@'localhost' IDENTIFIED 
 * 
 <br>
 
+#### Om du vil se flere grants du kan gi kan du trykke på denne lengken 
+
 #### Om du ikke forstår noe eller sitter fast kan du trykke på denne lenken <br>
 Les alt her: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql 
 
 ## Naviger mysql terminal
 * I root brukeren har du tilgang til all privl
+
+
+# dbeaver
+### Connect
+* klikk på data på toppen av skjermen
+![data](https://github.com/user-attachments/assets/11ae0a7d-e13b-46f3-b291-4d7940c6e965)
+
