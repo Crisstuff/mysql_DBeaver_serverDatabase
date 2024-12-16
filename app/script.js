@@ -8,29 +8,20 @@ let checkmark
 
 function klikk(){ 
 
- fetch("https://jsonplaceholder.typicode.com/todos/10") 
-
+ fetch("https://jsonplaceholder.typicode.com/todos/1") 
  .then(respons => { 
-
  out += respons.status 
-
  return respons.json() 
-
  }) 
-
  .then(data => { 
-
  checkmark = data.completed ? "☑":"☐" 
-
  out += "<br>"+checkmark+" "+data.title 
-
  }) 
 
  
 
  ut.innerHTML = out 
-
- out = "" 
+ out = "index.html" 
 
 } 
 
