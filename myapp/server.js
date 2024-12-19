@@ -1,8 +1,7 @@
 const cors = require('cors');
 app.use(cors());
-app.use(express.json());
 
-const express = require('express')
+const express = require('express_db')
 const app = express()
 const port = 3000
 
@@ -19,7 +18,7 @@ const mysql = require('mysql');
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '', // Endre passord hvis nødvendig
+    password: 'skole12', // Endre passord hvis nødvendig
     database: 'express_db'
 });
 

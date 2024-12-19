@@ -3,24 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GET Request Demo</title>
+    <title>Brukeradministrasjon</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        table, th, td { border: 1px solid #ddd; text-align: left; }
+        th, td { padding: 8px; }
+        th { background-color: #f4f4f4; }
+    </style>
 </head>
 <body>
-    <h1>GET Request Demo</h1>
-    <button id="getRequestBtn">Send GET Request</button>
-    <p id="response"></p>
+    <h1>Brukeradministrasjon</h1>
+
+    <!-- Liste brukere -->
+    <h2>Liste over brukere</h2>
+    <button id="loadUsers">Last inn brukere</button>
+    <table id="usersTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Navn</th>
+                <th>Email</th>
+                <th>Alder</th>
+                <th>Handlinger</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- Legg til ny bruker -->
+    <h2>Legg til ny bruker</h2>
+    <form id="addUserForm">
+        <input type="text" id="name" placeholder="Navn" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="number" id="age" placeholder="Alder" required>
+        <button type="submit">Legg til bruker</button>
+    </form>
+
+    <!-- Oppdater bruker -->
+    <h2>Oppdater bruker</h2>
+    <form id="updateUserForm">
+        <input type="hidden" id="updateId">
+        <input type="text" id="updateName" placeholder="Navn" required>
+        <input type="email" id="updateEmail" placeholder="Email" required>
+        <input type="number" id="updateAge" placeholder="Alder" required>
+        <button type="submit">Oppdater bruker</button>
+    </form>
 
     <script>
-        document.getElementById('getRequestBtn').addEventListener('click', async () => {
-            try {
-                const response = await fetch('http://localhost:3000');
-                const data = await response.text();
-                document.getElementById('response').innerText = data;
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('response').innerText = 'Failed to fetch data.';
-            }
+        const API_URL = 'http://localhost:3000/users';
+
+        // Liste brukere
+        document.getElementById('loadUsers').addEventListener('click', async () => {
+            const response = await fetch(API_URL);
+            const users = await response.json();
+
+            const tableBody = document.querySelector('#usersTable tbody');
+            tableBody.innerHTML = ''; // Tøm tabellen før ny innlasting
+
+            users.forEach(user => {
+                const row = `
+                    <tr>
+                        <td>${user.id}</td>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.age}</td>
+                        <td>
+                            <button onclick="deleteUser(${user.id})">Slett</button>
+                            <button onclick="editUser(${user.id}, '${user.name}', '${user.email}', ${user.age})">Rediger</button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
         });
+
+        // Legg til ny bruker
+        document.getElementById('addUserForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const age = document.getElementById('age').value;
+
+            await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, age })
+            });
+
+            alert('Bruker lagt til!');
+            document.getElementById('addUserForm').reset();
+        });
+
+        // Oppdater bruker
+        document.getElementById('updateUserForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('updateId').value;
+            const name = document.getElementById('updateName').value;
+            const email = document.getElementById('updateEmail').value;
+            const age = document.getElementById('updateAge').value;
+
+            await fetch(`${API_URL}/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, age })
+            });
+
+            alert('Bruker oppdatert!');
+            document.getElementById('updateUserForm').reset();
+        });
+
+        // Slett bruker
+        async function deleteUser(id) {
+            await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+            alert('Bruker slettet!');
+        }
+
+        // Fyll ut skjema for oppdatering
+        function editUser(id, name, email, age) {
+            document.getElementById('updateId').value = id;
+            document.getElementById('updateName').value = name;
+            document.getElementById('updateEmail').value = email;
+            document.getElementById('updateAge').value = age;
+        }
     </script>
 </body>
 </html>

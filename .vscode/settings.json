@@ -15,5 +15,8 @@
             "password": "skole12",
             "connectionTimeout": 30
         }
+    ],
+    "dataworkspace.excludedProjects": [
+        "express_db/express_db.sqlproj"
     ]
 }
