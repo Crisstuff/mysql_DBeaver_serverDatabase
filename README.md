@@ -1,3 +1,9 @@
+
+- start server = node server.js
+
+
+
+
 # MYSQL Brukerveiledning
 ## Nedlastning
 * Download mysql -->
