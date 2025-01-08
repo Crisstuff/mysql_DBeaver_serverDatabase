@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul id="tasks"></ul>
+    <input type="text" id="newTask" placeholder="New Task">
+    <button id="addTask">Add Task</button>
+    <script>
+        const loadTasks = () => {
+            fetch('http://localhost:3000/tasks')
+                .then(res => res.json())
+                .then(tasks => {
+                    const list = document.getElementById('tasks');
+                    list.innerHTML = '';
+                    tasks.forEach(task => {
+                        const li = document.createElement('li');
+                        li.textContent = task.description + (task.completed ? ' (Completed)' : '');
+                        list.appendChild(li);
+                    });
+                });
+        };
+
+        document.getElementById('addTask').addEventListener('click', () => {
+            const description = document.getElementById('newTask').value;
+            fetch('http://localhost:3000/tasks', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ description }),
+            }).then(loadTasks);
+        });
+
+        loadTasks();
+    </script>
+</body>
+</html>
